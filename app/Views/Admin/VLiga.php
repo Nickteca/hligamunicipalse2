@@ -13,12 +13,12 @@ Inicio
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Starter Page</h1>
+                    <h1 class="m-0">Ligas</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Starter Page</li>
+                        <li class="breadcrumb-item active">Ligas</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -30,65 +30,50 @@ Inicio
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's
-                                content.
-                            </p>
-
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's
-                                content.
-                            </p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div><!-- /.card -->
-                </div>
-                <!-- /.col-md-6 -->
-                <div class="col-lg-6">
-                    <div class="card">
+                <div class="col">
+                    <div class="card elevation-4">
                         <div class="card-header">
-                            <h5 class="m-0">Featured</h5>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default">
+                                <i class="icon fas fa-plus"></i> Agregar Liga
+                            </button>
                         </div>
                         <div class="card-body">
-                            <h6 class="card-title">Special title treatment</h6>
+                            <div class="row">
+                                <?php
+                                if (count($nligas) <= 0) {
+                                    ?>
+                                    <div class="alert alert-danger alert-dismissible">
 
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Featured</h5>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title">Special title treatment</h6>
-
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <h5><i class="icon fas fa-ban"></i> Alerta!</h5>
+                                        No hay liga registradas
+                                    </div>
+                                    <?php
+                                } else {
+                                    foreach ($nligas as $key => $value) {
+                                        ?>
+                                        <div class="col-lg-4 mb-2">
+                                            <div
+                                                class="callout <?= $retVal = ($key % 2 == 0) ? " callout-success " : "callout-danger"; ?>  shadow">
+                                                <h5>
+                                                    <a class="btn btn-primary text-light">
+                                                        <?= $value['nombre_liga'] ?>
+                                                    </a>
+                                                </h5>
+                                                <p>
+                                                    <?= $value['descripcion_liga'] ?>
+                                                </p>
+                                                <img class="img-fuid" src="<?= base_url('public/Img/' . $value['logo']) ?>"
+                                                    style="max-width: 18rem;">
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.col-md-6 -->
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -96,4 +81,26 @@ Inicio
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Default Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 <?= $this->endSection(); ?>

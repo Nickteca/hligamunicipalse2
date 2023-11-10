@@ -14,8 +14,8 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="vendor/almasaeed2010/adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="vendor/almasaeed2010/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="vendor/almasaeed2010/adminlte/dist/js/adminlte.min.js"></script>
+<script src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/js/adminlte.min.js"></script>

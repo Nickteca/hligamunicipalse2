@@ -50,8 +50,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="vendor/almasaeed2010/adminlte/dist/img/user1-128x128.jpg" alt="User Avatar"
-                                class="img-size-50 mr-3 img-circle">
+                            <img src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/img/user1-128x128.jpg"
+                                alt="User Avatar" class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -67,8 +67,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="vendor/almasaeed2010/adminlte/dist/img/user8-128x128.jpg" alt="User Avatar"
-                                class="img-size-50 img-circle mr-3">
+                            <img src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/img/user8-128x128.jpg"
+                                alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     John Pierce
@@ -84,8 +84,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="vendor/almasaeed2010/adminlte/dist/img/user3-128x128.jpg" alt="User Avatar"
-                                class="img-size-50 img-circle mr-3">
+                            <img src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/img/user3-128x128.jpg"
+                                alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -144,8 +144,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-            <img src="vendor/almasaeed2010/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        <a href="<?= base_url('admin') ?>" class="brand-link">
+            <img src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">H LIGA MUNICIPAL SE</span>
         </a>
@@ -155,8 +155,8 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="vendor/almasaeed2010/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                        alt="User Image">
+                    <img src="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/img/user2-160x160.jpg"
+                        class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">
@@ -174,35 +174,20 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                    <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/liga') ?>"
+                            class="nav-link <?= service('request')->uri->getPath() == '/hligamunicipalse2/admin/liga' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-trophy"></i>
                             <p>
-                                Starter Pages
-                                <i class="right fas fa-angle-left"></i>
+                                Ligas
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= base_url('admin/liga') ?>" class="nav-link active">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Active Page</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inactive Page</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                            <i class="nav-icon fas fa-user"></i>
                             <p>
-                                Simple Link
-                                <span class="right badge badge-danger">New</span>
+                                Usuarios
                             </p>
                         </a>
                     </li>

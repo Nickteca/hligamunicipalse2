@@ -11,7 +11,7 @@ class MLiga extends Model {
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
     protected $protectFields = true;
-    protected $allowedFields = ['nombre_liga', 'logo'];
+    protected $allowedFields = ['nombre_liga', 'descripcion_liga', 'logo'];
 
     // Dates
     protected $useTimestamps = true;
