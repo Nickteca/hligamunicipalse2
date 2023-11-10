@@ -24,7 +24,7 @@ class SesionAdmin implements FilterInterface {
      */
     public function before(RequestInterface $request, $arguments = null) {
         if (session('type') != 'Admin') {
-            redirect()->to(base_url());
+            return redirect()->to(base_url());
         }
     }
 
