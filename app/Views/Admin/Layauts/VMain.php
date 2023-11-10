@@ -32,6 +32,7 @@
 
     <!-- Javascripts personalizadas -->
     <?= $this->renderSection('jss'); ?>
+    <?= $this->renderSection('scripts'); ?>
 </body>
 
 </html>
