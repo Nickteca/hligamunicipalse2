@@ -23,6 +23,7 @@ $routes->group('/admin', ['namespace' => 'App\Controllers\Admin'], function ($ro
     //url para ligas
     $routes->get('liga', 'CLiga::index', ['as' => 'VLigas']);
     $routes->post('registro_liga', 'CLiga::registrar_liga');
-
+    //urlEquipos
+    $routes->get('equipo', 'CEquipo::index');
     //VRegistro_usuario
 });

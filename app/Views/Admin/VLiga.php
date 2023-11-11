@@ -51,7 +51,7 @@ Inicio
                                 } else {
                                     foreach ($nligas as $key => $value) {
                                         ?>
-                                        <div class="col-lg-4 mb-2">
+                                        <div class="col-lg-3 mb-2">
                                             <!--<div class="position-relative p-3 bg-gray" style="height: 180px">
                                                 <div class="ribbon-wrapper ribbon-xl">
                                                     <div class="ribbon bg-warning text-lg">
@@ -61,16 +61,22 @@ Inicio
                                                  //$value['descripcion_liga']
                                             </div>-->
                                             <a href="#">
-                                                <div class="position-relative">
-                                                    <img src="<?= base_url('public/Img/' . $value['logo']) ?>" alt="Photo 2"
-                                                        class="img-fluid">
-                                                    <div class="ribbon-wrapper ribbon-xl">
-                                                        <div class="ribbon bg-primary text-lg">
-
+                                                <div class="card shadow">
+                                                    <img src="<?= base_url('public/Img/' . $value['logo']) ?>"
+                                                        class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">
                                                             <?= $value['nombre_liga'] ?>
-
-                                                        </div>
+                                                        </h5>
+                                                        <p class="card-text">
+                                                            <?= $value['descripcion_liga'] ?>
+                                                        </p>
+                                                        <a href="#" class="btn btn-primary">Go somewhere</a>
                                                     </div>
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item"># Equipos:</li>
+                                                        <li class="list-group-item"># Jornadas:</li>
+                                                    </ul>
                                                 </div>
                                             </a>
                                         </div>

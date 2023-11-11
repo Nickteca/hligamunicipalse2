@@ -184,6 +184,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="<?= base_url('admin/equipo') ?>"
+                            class="nav-link <?= service('request')->uri->getPath() == '/hligamunicipalse2/admin/equipo' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Equipo
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>

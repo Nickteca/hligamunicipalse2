@@ -23,6 +23,7 @@
         href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/css/adminlte.min.css">
+    <?= $this->renderSection('css'); ?>
 </head>
 
 <body class="hold-transition sidebar-mini">
