@@ -51,14 +51,9 @@ Equipos
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" placeholder="Nombre Equipo">
                                             <div class="input-group-append">
-                                                <div class="input-group-text"><i class="fas fa-ambulance"></i></div>
+                                                <div class="input-group-text"><i class="fas fa-user-check"></i></div>
                                             </div>
                                         </div>
                                     </div>
