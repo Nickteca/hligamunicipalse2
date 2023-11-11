@@ -62,8 +62,8 @@ Inicio
                                             </div>-->
                                             <a href="#">
                                                 <div class="position-relative">
-                                                    <img src="<?= base_url('public/Img/7754672-banner-de-fútbol.jpg') ?>"
-                                                        alt="Photo 2" class="img-fluid">
+                                                    <img src="<?= base_url('public/Img/' . $value['logo']) ?>" alt="Photo 2"
+                                                        class="img-fluid">
                                                     <div class="ribbon-wrapper ribbon-xl">
                                                         <div class="ribbon bg-primary text-lg">
 
@@ -93,13 +93,15 @@ Inicio
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Default Modal</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
             <form method="post" action="<?= base_url('admin/registro_liga') ?>">
+                <div class="modal-header">
+                    <h4 class="modal-title">Default Modal</h4>
+                    <code> <?= session('errores') ?></code>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
                 <div class="modal-body">
                     <div class="form-group">
                         <code> <?= session('errors.nombre_liga') ?></code>
@@ -115,10 +117,10 @@ Inicio
                     </div>
                     <div class="form-group">
                         <code> <?= session('errors.logo') ?></code>
-                        <label for="exampleInputFile">Logo</label>
+                        <label for="logo">Logo</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                <input type="file" name="logo" class="custom-file-input" id="logo">
                                 <label class="custom-file-label" for="exampleInputFile">Elejir Imagen</label>
                             </div>
                             <div class="input-group-append">
@@ -128,14 +130,12 @@ Inicio
                     </div>
                 </div>
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
         <!-- /.modal-content -->
     </div>
@@ -154,14 +154,19 @@ Inicio
         bsCustomFileInput.init();
     });
     $(document).ready(function () {
-        if (localStorage.getItem("errors.nombre_liga") !== null) {
-            // La sesión existe
-            console.log("La sesión existe");
-        } else {
-            // La sesión no existe
-            console.log("La sesión no existe");
+
+        var errorNombreLiga = <?php echo json_encode(session('errors.nombre_liga')); ?>;
+        var errorDescripcionLiga = <?php echo json_encode(session('errors.descripcion_liga')); ?>;
+        var errorLogoLiga = <?php echo json_encode(session('errors.logo')); ?>;
+        var errorLiga = <?php echo json_encode(session('errores')); ?>;
+        if (errorNombreLiga !== null || errorDescripcionLiga != null || errorLogoLiga != null || errorLiga != null) {
+            console.log(errorNombreLiga);
+            console.log(errorDescripcionLiga);
+            console.log(errorLiga);
+            console.log(errorLogoLiga);
+            $('#modal-default').modal('show');
         }
-        // Muestra el modal al cargar la página
+
 
     });
 </script>
