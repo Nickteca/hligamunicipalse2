@@ -55,15 +55,18 @@ Equipos
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <code> <?= session('errors.nombre_equipo') ?></code>
                                         <label>Nombre del Equipo</label>
                                         <div class="input-group">
 
-                                            <input type="text" class="form-control" placeholder="Nombre Equipo">
+                                            <input type="text" name="nombre_equipo" class="form-control"
+                                                placeholder="Nombre Equipo">
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="fas fa-users"></i></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <code> <?= session('errors.liga_seleccionada[]') ?></code>
                                             <label>Ligas registradas del equipo</label>
                                             <div class="select2-purple">
                                                 <select name="liga_seleccionada[]" class="select2" multiple="multiple"

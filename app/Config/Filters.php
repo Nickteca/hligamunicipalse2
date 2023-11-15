@@ -72,6 +72,9 @@ class Filters extends BaseConfig {
             "before" => [
                 "admin",
                 "admin/liga",
+                "admin/registrar_liga",
+                "admin/equipo",
+                "admin/registrar_equipo",
             ]
         ]
     ];
