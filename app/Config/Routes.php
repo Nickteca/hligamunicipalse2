@@ -25,5 +25,6 @@ $routes->group('/admin', ['namespace' => 'App\Controllers\Admin'], function ($ro
     $routes->post('registro_liga', 'CLiga::registrar_liga');
     //urlEquipos
     $routes->get('equipo', 'CEquipo::index');
+    $routes->post('registrar_equipo', 'CEquipo::registrar_equipo');
     //VRegistro_usuario
 });

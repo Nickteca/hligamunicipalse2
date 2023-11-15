@@ -11,9 +11,14 @@ Equipos
     href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet"
     href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-<?= $this->endSection(); ?>
+
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/ekko-lightbox/ekko-lightbox.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/select2/css/select2.min.css">
+<link rel="stylesheet"
+    href="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<?= $this->endSection(); ?>
 
 <!-- Content Wrapper. Contains page content -->
 <?= $this->section('content'); ?>
@@ -42,18 +47,39 @@ Equipos
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <div class="card card-primary">
-                        <form>
+                    <form method="post" action="<?= base_url('admin/registrar_equipo') ?>">
+                        <div class="card card-primary elevation-4">
                             <div class="card-header">
                                 <h3 class="card-title">Datos Equipo</h3>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <label>Nombre del Equipo</label>
                                         <div class="input-group">
+
                                             <input type="text" class="form-control" placeholder="Nombre Equipo">
                                             <div class="input-group-append">
-                                                <div class="input-group-text"><i class="fas fa-user-check"></i></div>
+                                                <div class="input-group-text"><i class="fas fa-users"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ligas registradas del equipo</label>
+                                            <div class="select2-purple">
+                                                <select name="liga_seleccionada[]" class="select2" multiple="multiple"
+                                                    data-placeholder="Select a State"
+                                                    data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                                    <?php
+
+                                                    foreach ($nligas as $key => $value) {
+                                                        ?>
+                                                        <option value="<?= $value['id_liga'] ?>">
+                                                            <?= $value['nombre_liga'] ?>
+                                                        </option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -63,13 +89,13 @@ Equipos
                                 <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Save
                                     changes</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="card card-info">
+                    <div class="card card-info shadow-lg">
                         <div class="card-header">
                             <h3 class="card-title">DataTable with default features</h3>
                         </div>
@@ -897,6 +923,8 @@ Equipos
     src="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Ekko Lightbox -->
 <script src="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- Select2 -->
+<script src="<?= base_url() ?>vendor/almasaeed2010/adminlte/plugins/select2/js/select2.full.min.js"></script>
 <?= $this->endSection(); ?>
 <?= $this->section('scripts'); ?>
 <script>
@@ -928,6 +956,12 @@ Equipos
             $('.btn[data-filter]').removeClass('active');
             $(this).addClass('active');
         });
+        //Initialize Select2 Elements
+        $('.select2').select2()
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
     })
 </script>
 <?= $this->endSection(); ?>
