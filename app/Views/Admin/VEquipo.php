@@ -59,19 +59,20 @@ Equipos
                                         <label>Nombre del Equipo</label>
                                         <div class="input-group">
 
-                                            <input type="text" name="nombre_equipo" class="form-control"
-                                                placeholder="Nombre Equipo">
+                                            <input type="text" value="<?= old('nombre_equipo') ?>" name="nombre_equipo"
+                                                class="form-control" placeholder="Nombre Equipo">
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="fas fa-users"></i></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <code> <?= session('errors.liga_seleccionada[]') ?></code>
+                                            <code> <?= session('errores') ?></code>
                                             <label>Ligas registradas del equipo</label>
                                             <div class="select2-purple">
                                                 <select name="liga_seleccionada[]" class="select2" multiple="multiple"
                                                     data-placeholder="Select a State"
-                                                    data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                                    data-dropdown-css-class="select2-purple" style="width: 100%;"
+                                                    required>
                                                     <?php
 
                                                     foreach ($nligas as $key => $value) {

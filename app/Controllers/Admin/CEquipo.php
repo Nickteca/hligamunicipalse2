@@ -31,6 +31,10 @@ class CEquipo extends BaseController {
             'nombre_equipo' => 'required|max_length[50]|alpha_space|is_unique[equipo.nombre_equipo]',
             //'liga_seleccionada[]' => 'in_list[5,6,7,8]'
         ]);
+        //echo count($this->request->getPost('liga_seleccionada'));
+        /*if (empty($this->request->getPost('liga_seleccionada'))) {
+            return redirect()->back()->with('errores', 'Debes seleccionar al menos unaliga');
+        }*/
         //dd($this->request->getPost('liga_seleccionada'));
         var_dump($this->request->getPost('liga_seleccionada'));
         if (!$validaciones->withRequest($this->request)->run()) {
