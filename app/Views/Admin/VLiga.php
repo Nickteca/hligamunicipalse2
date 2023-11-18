@@ -3,56 +3,57 @@
 <?= $this->section('title'); ?>
 Inicio
 <?= $this->endSection(); ?>
+<?= $this->section('css'); ?>
+<link rel="stylesheet" href="<?= base_url() ?>vendor/almasaeed2010/adminlte/dist/css/adminlte.min.css">
+<?= $this->endSection(); ?>
 <!-- Content Wrapper. Contains page content -->
 <?= $this->section('content'); ?>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Ligas</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Ligas</li>
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Ligas</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Ligas</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
 
-    <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <div class="card elevation-4">
-                        <div class="card-header">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default">
-                                <i class="icon fas fa-plus"></i> Agregar Liga
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
+<!-- Main content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card elevation-4">
+                    <div class="card-header">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default">
+                            <i class="icon fas fa-plus"></i> Agregar Liga
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <?php
+                            if (count($nligas) <= 0) {
+                                ?>
+                                <div class="alert alert-danger alert-dismissible">
+
+                                    <h5><i class="icon fas fa-ban"></i> Alerta!</h5>
+                                    No hay liga registradas
+                                </div>
                                 <?php
-                                if (count($nligas) <= 0) {
+                            } else {
+                                foreach ($nligas as $key => $value) {
                                     ?>
-                                    <div class="alert alert-danger alert-dismissible">
-
-                                        <h5><i class="icon fas fa-ban"></i> Alerta!</h5>
-                                        No hay liga registradas
-                                    </div>
-                                    <?php
-                                } else {
-                                    foreach ($nligas as $key => $value) {
-                                        ?>
-                                        <div class="col-lg-3 mb-2">
-                                            <!--<div class="position-relative p-3 bg-gray" style="height: 180px">
+                                    <div class="col-lg-3 mb-2">
+                                        <!--<div class="position-relative p-3 bg-gray" style="height: 180px">
                                                 <div class="ribbon-wrapper ribbon-xl">
                                                     <div class="ribbon bg-warning text-lg">
                                                          //$value['nombre_liga'] 
@@ -60,41 +61,39 @@ Inicio
                                                 </div>
                                                  //$value['descripcion_liga']
                                             </div>-->
-                                            <a href="#">
-                                                <div class="card shadow">
-                                                    <img src="<?= base_url('public/Img/' . $value['logo']) ?>"
-                                                        class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">
-                                                            <?= $value['nombre_liga'] ?>
-                                                        </h5>
-                                                        <p class="card-text">
-                                                            <?= $value['descripcion_liga'] ?>
-                                                        </p>
-                                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                    </div>
-                                                    <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item"># Equipos:</li>
-                                                        <li class="list-group-item"># Jornadas:</li>
-                                                    </ul>
+                                        <a href="#">
+                                            <div class="card shadow">
+                                                <img src="<?= base_url('public/Img/' . $value['logo']) ?>" class="card-img-top"
+                                                    alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <?= $value['nombre_liga'] ?>
+                                                    </h5>
+                                                    <p class="card-text">
+                                                        <?= $value['descripcion_liga'] ?>
+                                                    </p>
+                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
                                                 </div>
-                                            </a>
-                                        </div>
-                                        <?php
-                                    }
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item"># Equipos:</li>
+                                                    <li class="list-group-item"># Jornadas:</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <?php
                                 }
-                                ?>
-                            </div>
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
 </div>
-<!-- /.content-wrapper -->
+<!-- /.content -->
 
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">

@@ -1,5 +1,4 @@
 <div class="wrapper">
-
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -207,3 +206,5 @@
         <!-- /.sidebar -->
     </aside>
     <!-- /.Main Sidebar Container -->
+
+    <div class="content-wrapper">

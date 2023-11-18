@@ -1,3 +1,5 @@
+<!-- /.content-wrapper -->
+</div>
 <!-- Main Footer -->
 <footer class="main-footer">
     <!-- To the right -->
@@ -9,7 +11,8 @@
     reserved.
 </footer>
 <!-- ./wrapper -->
-
+</div>
+<!-- /.content-wrapper -->
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
