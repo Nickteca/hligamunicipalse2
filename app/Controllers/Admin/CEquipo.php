@@ -42,9 +42,9 @@ class CEquipo extends BaseController {
             return redirect()->back()->withInput()->with('errors', $validaciones->getErrors());
         } else {
             $equipo = [
-                "nombre_liga" => $this->request->getPost('nombre_liga'),
-                "descripcion_liga" => $this->request->getPost('descripcion_liga'),
-                "logo" => $this->request->getPost('logo')
+                "nombre_equipo" => $this->request->getPost('nombre_liga'),
+                "logo" => $this->request->getPost('descripcion_liga'),
+                "" => $this->request->getPost('logo')
             ];
             $mliga = new MLiga();
             $mliga->save($liga);
